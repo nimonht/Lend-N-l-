@@ -1,0 +1,291 @@
+body {
+    font-family: "Azeret Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    color: white;
+    background-color: #7289da;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.anchor {
+    color: inherit;
+    margin-right: 10px;
+}
+
+.main-card {
+    width: 1200px;
+    height: 800px;
+    background-color: #1e2124;
+    border-radius: 10px;
+    margin: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.top-banner > img {
+    width: 1200px;
+    height: 240px;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.avatar-frame {
+    height: 188px;
+    width: 188px;
+    border-radius: 50%;
+    background-color: #1e2124;
+    margin-left: 100px;
+    position: relative;
+    bottom: 100px;
+}
+
+.avatar {
+    height: 168px;
+    width: 168px;
+    border-radius: 50%;
+    margin-left: 110px;
+    position: relative;
+    bottom: 280px;
+    background-image: url(./Gawr\ Gura\ avt.jpg);
+}
+ 
+.title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    position: relative;
+    font-size: larger;
+    margin-left: 100px;
+    bottom: 280px;
+    padding: 0;
+    row-gap: 0px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+
+.subname {
+    margin-top: 0;
+}
+
+.main-container {
+    border-radius: 10px;
+    background-color: #36393e;
+    width: 1000px;
+    height: 300px;
+    max-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    bottom: 270px;
+    left: 100px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: "Azeret Mono", serif;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.blank-line {
+    background-color: #424549;
+    width: 960px;
+    height: 2px;
+    position: relative;
+    bottom: 20px;
+    left: 20px;
+}
+
+.button:hover::after {
+    width: 100%;
+}
+
+.content {
+    display: none;
+    margin-left: 10px;
+    padding: 10px;
+    height: 220px;
+    max-width: 90vw;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.content h1, h2, h3 {
+    color: #99aab5;
+}
+
+.section-title {
+    border-bottom: 3px solid #424549;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.certificate {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 90vh;
+    align-content: space-between;
+    margin-bottom: 3rem;
+    padding: 20px 105px 20px 20px;
+    background-color: #424549;
+    border-radius: 10px;
+}
+
+.images {
+    justify-content: flex-start;
+    align-content: center;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    object-fit: fill;
+}
+
+.text {
+    padding-left: 20px;
+    align-content: center;
+}
+
+footer {
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    body{
+        width: 80%;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .main-card {
+        width: 90%;
+        height: auto;
+        margin-left: 115px;
+    }
+
+    .top-banner > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .avatar-frame {
+        height: 100px;
+        width: 100px;
+        margin-left: 20px;
+        margin-top: 130px;
+    }
+
+    .avatar {
+        height: 90px;
+        width: 90px;
+        margin-left: 30px;
+        border: 5px solid#1e2124;
+    }
+
+    .title-container {
+        font-size: medium;
+        margin-left: 20px;
+        bottom: 180px;
+    }
+
+    .main-container {
+        width: 90%;
+        height: auto;
+        max-height: none;
+        left: 20px;
+        bottom: 170px;
+    }
+
+    .buttons {
+        gap: 20px;
+    }
+
+    .button {
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .blank-line {
+        width: 90%;
+        left: 5%;
+    }
+
+    .content {
+        height: auto;
+        padding: 5px;
+        max-width: 90%;
+    }
+
+    .certificate {
+        max-width: 90%;
+        padding: 10px 20px 10px 10px;
+    }
+
+    .images {
+        height: 50px;
+        width: 50px;
+    }
+
+    .text {
+        padding-left: 10px;
+    }
+
+    footer {
+        font-size: 0.5rem;
+    }
+}
+
