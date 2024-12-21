@@ -55,7 +55,9 @@ body::-webkit-scrollbar {
     margin-left: 110px;
     position: relative;
     bottom: 280px;
-    background-image: url(./Gawr Gura avt.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-image: url(./asset/Gawr\ Gura\ avt.jpg);
 }
  
 .title-container {
@@ -208,22 +210,35 @@ footer {
     text-align: justify;
 }
 
+@media (max-width: 1200px) {
+    footer {
+        text-align: center;
+        font-size: 0.5rem;
+        padding-bottom: 20px;
+    }
+}
+
 @media (max-width: 768px) {
-    body{
-        width: 80%;
+    html, body {
+        width: 100vw;
         height: auto;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
     .main-card {
-        width: 90%;
-        height: auto;
-        margin-left: 80px;
+        width: 100vw; 
+        height: auto; 
+        margin: 0 auto;
+        overflow-y: auto;
+        border-radius: 0;
     }
 
     .top-banner > img {
         width: 100%;
-        height: auto;
+        height: 34vh;
     }
 
     .avatar-frame {
@@ -240,7 +255,8 @@ footer {
         width: 90px;
         margin-bottom: 20px;
         margin-left: 30px;
-        border: 5px solid#1e2124;
+        border: 5px solid #1e2124;
+        background-image: url(./asset/Gawr\ Gura\ avt\ mobile.jpg);
     }
 
     .title-container {
@@ -252,12 +268,19 @@ footer {
         gap: 0;
     }
 
+    .contact-container {
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 100px;
+    }
+
     .main-container {
-        width: 90%;
-        height: auto;
-        max-height: none;
-        left: 20px;
+        width: 100vw; 
+        height: auto; 
+        max-height: 1000px;
+        left: 0;
         bottom: 170px;
+        margin: 0 auto; 
     }
 
     .buttons {
@@ -271,8 +294,8 @@ footer {
     }
 
     .blank-line {
-        width: 90%;
-        left: 5%;
+        width: 110%;
+        left: -20px;
     }
 
     .blank {
@@ -282,11 +305,14 @@ footer {
     .content {
         height: auto;
         padding: 5px;
-        max-width: 90%;
+        max-width: 100%; 
+        max-height: 800px; 
+        overflow-y: auto; 
+        box-sizing: border-box; 
     }
 
     .certificate {
-        max-width: 90%;
+        max-width: 100%;
         padding: 10px 20px 10px 10px;
     }
 
@@ -302,6 +328,126 @@ footer {
     footer {
         font-size: 0.5rem;
         text-align: center;
+        padding-bottom: 20px;
     }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    html, body {
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main-card {
+        width: 100vw; 
+        height: auto; 
+        margin: 0 auto;
+        overflow-y: auto;
+        border-radius: 0;
+    }
+
+    .top-banner > img {
+        width: 100%;
+        height: 34vh;
+    }
+
+    .avatar-frame {
+        position: relative;
+        height: 120px;
+        width: 120px;
+        top: 100px;
+    }
+
+    footer {
+        font-size: 0.5rem;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .avatar {
+        position: relative;
+        bottom: 185px;
+        height: 110px;
+        width: 110px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        border: 5px solid #1e2124;
+        background-image: url(./asset/Gawr\ Gura\ avt\ tablet.jpg);
+    }
+
+    .title-container {
+        font-size: large;
+        grid-template-columns: 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-left: 20px;
+        bottom: 180px;
+        gap: 0;
+    }
+
+    .contact-container {
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 100px;
+    }
+
+    .main-container {
+        width: 100vw; 
+        height: auto; 
+        max-height: 1000px;
+        left: 0;
+        bottom: 170px;
+        margin: 0 auto; 
+    }
+
+    .buttons {
+        gap: 20px;
+    }
+
+    .button {
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .blank-line {
+        width: 110%;
+        left: -20px;
+    }
+
+    .blank {
+        display: none;
+    }
+
+    .content {
+        height: auto;
+        padding: 5px;
+        max-width: 100%; 
+        max-height: 800px; 
+        overflow-y: auto; 
+        box-sizing: border-box; 
+    }
+
+    .certificate {
+        max-width: 100%;
+        padding: 10px 20px 10px 10px;
+    }
+
+    .images {
+        height: 60px;
+        width: 60px;
+    }
+
+    .text {
+        padding-left: 10px;
+    }
+
+    footer {
+        font-size: 0.5rem;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
