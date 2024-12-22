@@ -124,12 +124,11 @@
         </section>
     </div>
 </body>
-
-<script>
-        // Add hover effect to the first button on load
+    <script>
+        // Ensure underline is visible under the first button when page loads
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("button1").classList.add("hover-effect");
-            moveUnderline(0); // Start with the underline under the first button
+            moveUnderline(0); // Set underline under the first button on load
         });
 
         // Function to toggle content and update button underline
@@ -166,5 +165,4 @@
             });
         });
     </script>
-
 </html>
