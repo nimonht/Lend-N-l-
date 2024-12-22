@@ -49,7 +49,7 @@
                 <div class="buttons">
                     <button class="button" onclick="toggleContent('content1')">About me</button>
                     <button class="button" onclick="toggleContent('content2')">My carrer</button>
-                    <div class="underline" style="width: 100px; left: 0;"></div>
+                    <div class="underline" style="width: 0px; left: 0;"></div>
                 </div>
                 <div class="blank-line"></div>
                 <div id="content1" class="content active">
@@ -125,10 +125,9 @@
     </div>
 </body>
     <script>
-        // Ensure underline is visible under the first button when page loads
+        // Automatically trigger the first button on page load
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("button1").classList.add("hover-effect");
-            moveUnderline(0); // Set underline under the first button on load
+            document.getElementById("button1").click(); // Simulate click on the first button
         });
 
         // Function to toggle content and update button underline
@@ -142,6 +141,12 @@
                 content.classList.add('active');
             }
 
+            // Remove hover-effect from all buttons and add to the triggered one
+            document.querySelectorAll('.button').forEach(btn => {
+                btn.classList.remove('hover-effect');
+            });
+            document.querySelectorAll('.button')[buttonIndex].classList.add('hover-effect');
+
             // Move the underline to the correct button
             moveUnderline(buttonIndex);
         }
@@ -154,15 +159,5 @@
             underline.style.width = buttonWidth + 'px';
             underline.style.left = buttonLeft + 'px';
         }
-
-        // Remove hover effect from all buttons and add to the hovered button
-        document.querySelectorAll('.button').forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                document.querySelectorAll('.button').forEach(btn => {
-                    btn.classList.remove('hover-effect');
-                });
-                this.classList.add('hover-effect');
-            });
-        });
     </script>
 </html>
