@@ -126,6 +126,10 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
+.button.active::after {
+    width: 100%; 
+}
+
 .blank-line {
     background-color: #424549;
     width: 960px;
@@ -237,7 +241,7 @@ footer {
     }
 
     .section-title {
-        width: 770px;
+        width: 870px;
         word-spacing: -4px;
         font-size: 1rem;
         max-width: 70vw;
@@ -394,6 +398,10 @@ footer {
         margin-left: 20px;
         bottom: 180px;
         gap: 0;
+    }
+
+     .section-title {
+        width: 920px;
     }
 
     .contact-container {
