@@ -125,25 +125,45 @@
 </body>
 
 <script>
-    function toggleContent(contentId, buttonIndex) {
-        const content = document.getElementById(contentId);
-        const currentActive = document.querySelector('.content.active');
+        // Add hover effect to the first button on load
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("button1").classList.add("hover-effect");
+            moveUnderline(0); // Start with the underline under the first button
+        });
 
-        // Only switch content if it's not already active
-        if (currentActive !== content) {
-            document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
-            content.classList.add('active');
+        // Function to toggle content and update button underline
+        function toggleContent(contentId, buttonIndex) {
+            const content = document.getElementById(contentId);
+            const currentActive = document.querySelector('.content.active');
+
+            // Only switch content if it's not already active
+            if (currentActive !== content) {
+                document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+                content.classList.add('active');
+            }
+
+            // Move the underline to the correct button
+            moveUnderline(buttonIndex);
         }
 
-        // Move the underline to the correct button
-        moveUnderline(buttonIndex);
-    }
+        function moveUnderline(buttonIndex) {
+            const underline = document.querySelector('.underline');
+            const button = document.querySelectorAll('.button')[buttonIndex];
+            const buttonWidth = button.offsetWidth;
+            const buttonLeft = button.offsetLeft;
+            underline.style.width = buttonWidth + 'px';
+            underline.style.left = buttonLeft + 'px';
+        }
 
-    function moveUnderline(buttonIndex) {
-        const underline = document.querySelector('.underline');
-        const buttonWidth = document.querySelector('.button').offsetWidth;
-        underline.style.left = buttonIndex * buttonWidth + 'px';
-    }
-</script>
+        // Remove hover effect from all buttons and add to the hovered button
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                document.querySelectorAll('.button').forEach(btn => {
+                    btn.classList.remove('hover-effect');
+                });
+                this.classList.add('hover-effect');
+            });
+        });
+    </script>
 
 </html>
