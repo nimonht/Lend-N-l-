@@ -126,6 +126,14 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
+.underline {
+    position: absolute;
+    height: 2px;
+    background-color: white;
+    transition: left 0.3s ease;
+    bottom: 0;
+}
+
 .blank-line {
     background-color: #424549;
     width: 960px;
