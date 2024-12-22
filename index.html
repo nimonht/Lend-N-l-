@@ -129,34 +129,23 @@
             document.getElementById("button1").click(); // Simulate click on the first button
         });
 
-        // Function to toggle content and update button underline
+        // Function to toggle content and show the active button's underline
         function toggleContent(contentId, buttonIndex) {
             const content = document.getElementById(contentId);
-            const currentActive = document.querySelector('.content.active');
+            const currentActiveContent = document.querySelector('.content.active');
+            const currentActiveButton = document.querySelector('.button.active');
 
-            // Only switch content if it's not already active
-            if (currentActive !== content) {
-                document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+            // Switch content only if it's not already active
+            if (currentActiveContent !== content) {
+                if (currentActiveContent) currentActiveContent.classList.remove('active');
                 content.classList.add('active');
             }
 
-            // Remove hover-effect from all buttons and add to the triggered one
-            document.querySelectorAll('.button').forEach(btn => {
-                btn.classList.remove('hover-effect');
-            });
-            document.querySelectorAll('.button')[buttonIndex].classList.add('hover-effect');
-
-            // Move the underline to the correct button
-            moveUnderline(buttonIndex);
-        }
-
-        function moveUnderline(buttonIndex) {
-            const underline = document.querySelector('.underline');
-            const button = document.querySelectorAll('.button')[buttonIndex];
-            const buttonWidth = button.offsetWidth;
-            const buttonLeft = button.offsetLeft;
-            underline.style.width = buttonWidth + 'px';
-            underline.style.left = buttonLeft + 'px';
+            // Remove active state from the previously active button
+            if (currentActiveButton) currentActiveButton.classList.remove('active');
+            
+            // Set the clicked button as active to trigger the underline
+            document.querySelectorAll('.button')[buttonIndex].classList.add('active');
         }
     </script>
 </html>
