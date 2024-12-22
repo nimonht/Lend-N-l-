@@ -236,6 +236,10 @@ footer {
         border-radius: 0;
     }
 
+    .section-title {
+    width: 770px;
+    }
+    
     .top-banner > img {
         width: 100%;
         height: 34vh;
