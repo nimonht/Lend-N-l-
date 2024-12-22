@@ -189,7 +189,7 @@ li {
     display: flex;
     flex-wrap: nowrap;
     max-width: 100vh;
-    align-content: space-between;
+    align-items: center;
     margin-bottom: 3rem;
     padding: 20px 250px 20px 20px;
     background-color: #424549;
@@ -198,7 +198,7 @@ li {
 
 .images {
     justify-content: flex-start;
-    align-content: center;
+    align-items: center;
     border-radius: 50%;
     height: 64px;
     width: 64px;
@@ -207,7 +207,8 @@ li {
 
 .text {
     padding-left: 20px;
-    align-content: center;
+    display: flex;
+    align-items: center;
 }
 
 footer {
